@@ -20,7 +20,7 @@ class MainTabBarViewController: UITabBarController {
     // MARK: Methods
 
     func setupUI() {
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .systemBackground
     }
 
     func setup() {
