@@ -44,7 +44,6 @@ class HomeViewController: UIViewController {
 
     private func configureNavbar() {
         let image = UIImage(named: "Logo")?.withRenderingMode(.alwaysOriginal)
-        image.scale
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
 
         navigationItem.rightBarButtonItems = [
