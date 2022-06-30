@@ -8,9 +8,15 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    // MARK: Init
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
+
+    // MARK: Methods
+
+    func setupUI() {}
 }
