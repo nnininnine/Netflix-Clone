@@ -17,6 +17,7 @@
 		69D5E8DF286D4EF900BA9692 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8DE286D4EF900BA9692 /* UpcomingViewController.swift */; };
 		69D5E8E3286D4F4400BA9692 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8E2286D4F4400BA9692 /* DownloadsViewController.swift */; };
 		69D5E8E8286D60CB00BA9692 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8E7286D60CB00BA9692 /* CollectionViewTableViewCell.swift */; };
+		69D5E8EA286D6EA800BA9692 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8E9286D6EA800BA9692 /* HeroHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		69D5E8DE286D4EF900BA9692 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		69D5E8E2286D4F4400BA9692 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		69D5E8E7286D60CB00BA9692 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		69D5E8E9286D6EA800BA9692 /* HeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				69D5E8D6286D4E8600BA9692 /* HomeViewController.swift */,
 				69D5E8E7286D60CB00BA9692 /* CollectionViewTableViewCell.swift */,
+				69D5E8E9286D6EA800BA9692 /* HeroHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				69D5E8DB286D4EBF00BA9692 /* SearchViewController.swift in Sources */,
 				69D5E8E8286D60CB00BA9692 /* CollectionViewTableViewCell.swift in Sources */,
 				69D5E8E3286D4F4400BA9692 /* DownloadsViewController.swift in Sources */,
+				69D5E8EA286D6EA800BA9692 /* HeroHeaderView.swift in Sources */,
 				69D5E8C3286D48AF00BA9692 /* MainTabBarViewController.swift in Sources */,
 				69D5E8BF286D48AF00BA9692 /* AppDelegate.swift in Sources */,
 				69D5E8C1286D48AF00BA9692 /* SceneDelegate.swift in Sources */,
