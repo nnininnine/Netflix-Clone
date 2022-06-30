@@ -18,6 +18,7 @@
 		69D5E8E3286D4F4400BA9692 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8E2286D4F4400BA9692 /* DownloadsViewController.swift */; };
 		69D5E8E8286D60CB00BA9692 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8E7286D60CB00BA9692 /* CollectionViewTableViewCell.swift */; };
 		69D5E8EA286D6EA800BA9692 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8E9286D6EA800BA9692 /* HeroHeaderView.swift */; };
+		69D5E8ED286D882F00BA9692 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8EC286D882F00BA9692 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		69D5E8E2286D4F4400BA9692 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		69D5E8E7286D60CB00BA9692 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		69D5E8E9286D6EA800BA9692 /* HeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
+		69D5E8EC286D882F00BA9692 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		69D5E8BD286D48AF00BA9692 /* Netflix-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				69D5E8EB286D882100BA9692 /* Extension */,
 				69D5E8E5286D5FD300BA9692 /* Base */,
 				69D5E8D2286D4D9F00BA9692 /* Screens */,
 				69D5E8C7286D48B000BA9692 /* Assets.xcassets */,
@@ -186,6 +189,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		69D5E8EB286D882100BA9692 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				69D5E8EC286D882F00BA9692 /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D5E8DF286D4EF900BA9692 /* UpcomingViewController.swift in Sources */,
+				69D5E8ED286D882F00BA9692 /* UIImage.swift in Sources */,
 				69D5E8DB286D4EBF00BA9692 /* SearchViewController.swift in Sources */,
 				69D5E8E8286D60CB00BA9692 /* CollectionViewTableViewCell.swift in Sources */,
 				69D5E8E3286D4F4400BA9692 /* DownloadsViewController.swift in Sources */,

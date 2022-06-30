@@ -36,8 +36,22 @@ class HomeViewController: UIViewController {
 
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        
-        homeFeedTable.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+
+        homeFeedTable.tableHeaderView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+
+        configureNavbar()
+    }
+
+    private func configureNavbar() {
+        let image = UIImage(named: "Logo")?.withRenderingMode(.alwaysOriginal)
+        image.scale
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+        ]
+        navigationController?.navigationBar.tintColor = .white
     }
 }
 
