@@ -62,9 +62,8 @@
 		69D5E8BD286D48AF00BA9692 /* Netflix-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				69D5E8E5286D5FD300BA9692 /* Base */,
 				69D5E8D2286D4D9F00BA9692 /* Screens */,
-				69D5E8BE286D48AF00BA9692 /* AppDelegate.swift */,
-				69D5E8C0286D48AF00BA9692 /* SceneDelegate.swift */,
 				69D5E8C7286D48B000BA9692 /* Assets.xcassets */,
 				69D5E8C9286D48B000BA9692 /* LaunchScreen.storyboard */,
 				69D5E8CC286D48B000BA9692 /* Info.plist */,
@@ -87,7 +86,7 @@
 		69D5E8D3286D4DBB00BA9692 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				69D5E8C2286D48AF00BA9692 /* MainTabBarViewController.swift */,
+				69D5E8E6286D603700BA9692 /* View */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -95,6 +94,7 @@
 		69D5E8D4286D4E6200BA9692 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				69D5E8E4286D5E7500BA9692 /* ViewModel */,
 				69D5E8D5286D4E6D00BA9692 /* View */,
 			);
 			path = Home;
@@ -152,6 +152,30 @@
 			isa = PBXGroup;
 			children = (
 				69D5E8E2286D4F4400BA9692 /* DownloadsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69D5E8E4286D5E7500BA9692 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		69D5E8E5286D5FD300BA9692 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				69D5E8BE286D48AF00BA9692 /* AppDelegate.swift */,
+				69D5E8C0286D48AF00BA9692 /* SceneDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		69D5E8E6286D603700BA9692 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69D5E8C2286D48AF00BA9692 /* MainTabBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
