@@ -9,6 +9,8 @@ target 'Netflix-Clone' do
   # Reactive
   pod 'RxSwift', '~> 6.5.0'
   pod 'RxCocoa', '~> 6.5.0'
+  # Network image
+  pod 'Nuke', '~> 10.7.1'
   # Pods for Netflix-Clone
 
 end
