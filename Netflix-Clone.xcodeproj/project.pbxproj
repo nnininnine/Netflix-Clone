@@ -12,6 +12,7 @@
 		1E9D3C5E286EB5DD00119CCA /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D3C5D286EB5DD00119CCA /* HomeService.swift */; };
 		1E9D3C60286EB70C00119CCA /* PopularMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D3C5F286EB70C00119CCA /* PopularMovie.swift */; };
 		1E9D3C62286EB71900119CCA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D3C61286EB71900119CCA /* HomeViewModel.swift */; };
+		1E9D3C65286EF00000119CCA /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D3C64286EF00000119CCA /* TitleCollectionViewCell.swift */; };
 		69D5E8BF286D48AF00BA9692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8BE286D48AF00BA9692 /* AppDelegate.swift */; };
 		69D5E8C1286D48AF00BA9692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8C0286D48AF00BA9692 /* SceneDelegate.swift */; };
 		69D5E8C3286D48AF00BA9692 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8C2286D48AF00BA9692 /* MainTabBarViewController.swift */; };
@@ -33,6 +34,7 @@
 		1E9D3C5D286EB5DD00119CCA /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		1E9D3C5F286EB70C00119CCA /* PopularMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovie.swift; sourceTree = "<group>"; };
 		1E9D3C61286EB71900119CCA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = "Netflix-Clone/Screens/Home/Model/HomeViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		1E9D3C64286EF00000119CCA /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A437F2AAB987E16F265B732 /* Pods_Netflix_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Netflix_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		408CF39B3692E169D8307CCD /* Pods-Netflix-Clone.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netflix-Clone.dev.xcconfig"; path = "Target Support Files/Pods-Netflix-Clone/Pods-Netflix-Clone.dev.xcconfig"; sourceTree = "<group>"; };
 		69D5E8BB286D48AF00BA9692 /* Netflix-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 				69D5E8D6286D4E8600BA9692 /* HomeViewController.swift */,
 				69D5E8E7286D60CB00BA9692 /* CollectionViewTableViewCell.swift */,
 				69D5E8E9286D6EA800BA9692 /* HeroHeaderView.swift */,
+				1E9D3C64286EF00000119CCA /* TitleCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D5E8DF286D4EF900BA9692 /* UpcomingViewController.swift in Sources */,
+				1E9D3C65286EF00000119CCA /* TitleCollectionViewCell.swift in Sources */,
 				1E9D3C57286EA22F00119CCA /* Constants.swift in Sources */,
 				1E9D3C60286EB70C00119CCA /* PopularMovie.swift in Sources */,
 				69D5E8ED286D882F00BA9692 /* UIImage.swift in Sources */,
