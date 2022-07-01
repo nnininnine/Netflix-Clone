@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel {
     // MARK: Properties
 
-    let service: HomeService = .init()
+    private let service: HomeService = .init()
 
     // MARK: Init
 
@@ -19,6 +19,12 @@ class HomeViewModel {
     // MARK: Methods
 
     func getPopularMovies() {
-        service.getPopularMovies { _, _, _ in }
+        service.getPopularMovies { success, popularMovies, err in
+            if success {
+                print(popularMovies?.count ?? 0)
+            } else {
+                print("err: \(err ?? "")")
+            }
+        }
     }
 }

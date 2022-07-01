@@ -16,7 +16,24 @@ class HomeService {
 
     func getPopularMovies(completion: @escaping (Bool, PopularMovies?, String?) -> Void) {
         let url = Constants.baseUrl + "/3/movie/popular?api_key=" + Constants.apiKey
-
         print(url)
+        HttpHelper.shared.get(url) { success, data, err in
+            if success {
+                do {
+                    guard let data = data else {
+                        completion(false, nil, err)
+                        return
+                    }
+                    let resp = try JSONDecoder().decode(PopularMoviesResponse.self, from: data)
+
+                    completion(true, resp.results, nil)
+                } catch let err {
+                    print("decode error")
+                    completion(false, nil, err.localizedDescription)
+                }
+            } else {
+                completion(false, nil, err)
+            }
+        }
     }
 }

@@ -11,13 +11,13 @@ typealias PopularMovies = [PopularMovie]
 
 struct PopularMoviesResponse: Codable {
     let page: Int
-    let totalResult: Int
+    let totalResults: Int
     let totalPages: Int
     let results: PopularMovies
 
     enum CodingKeys: String, CodingKey {
         case page, results
-        case totalResult = "total_result"
+        case totalResults = "total_results"
         case totalPages = "total_pages"
     }
 }

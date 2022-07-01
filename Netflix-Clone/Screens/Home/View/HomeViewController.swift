@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
     // MARK: Properties
 
+    lazy var viewModel: HomeViewModel = .init()
+
     let sectionTitles: [String] = ["Trending Movies", "Popular", "Trending TV", "Upcoming Movies", "Top rated"]
 
     private let homeFeedTable: UITableView = {
@@ -43,6 +45,9 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
 
         configureNavbar()
+
+        // get info
+        viewModel.getPopularMovies()
     }
 
     private func configureNavbar() {
