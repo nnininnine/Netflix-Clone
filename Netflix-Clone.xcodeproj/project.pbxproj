@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E9D3C57286EA22F00119CCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D3C56286EA22F00119CCA /* Constants.swift */; };
 		69D5E8BF286D48AF00BA9692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8BE286D48AF00BA9692 /* AppDelegate.swift */; };
 		69D5E8C1286D48AF00BA9692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8C0286D48AF00BA9692 /* SceneDelegate.swift */; };
 		69D5E8C3286D48AF00BA9692 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D5E8C2286D48AF00BA9692 /* MainTabBarViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E9D3C56286EA22F00119CCA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		69D5E8BB286D48AF00BA9692 /* Netflix-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D5E8BE286D48AF00BA9692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69D5E8C0286D48AF00BA9692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E9D3C55286EA21D00119CCA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1E9D3C56286EA22F00119CCA /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		69D5E8B2286D48AF00BA9692 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		69D5E8BD286D48AF00BA9692 /* Netflix-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				1E9D3C55286EA21D00119CCA /* Utilities */,
 				69D5E8EB286D882100BA9692 /* Extension */,
 				69D5E8E5286D5FD300BA9692 /* Base */,
 				69D5E8D2286D4D9F00BA9692 /* Screens */,
@@ -268,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D5E8DF286D4EF900BA9692 /* UpcomingViewController.swift in Sources */,
+				1E9D3C57286EA22F00119CCA /* Constants.swift in Sources */,
 				69D5E8ED286D882F00BA9692 /* UIImage.swift in Sources */,
 				69D5E8DB286D4EBF00BA9692 /* SearchViewController.swift in Sources */,
 				69D5E8E8286D60CB00BA9692 /* CollectionViewTableViewCell.swift in Sources */,
@@ -294,7 +306,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		69D5E8CD286D48B000BA9692 /* Debug */ = {
+		1E9D3C53286E9EAC00119CCA /* Dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -353,7 +365,38 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = Dev;
+		};
+		1E9D3C54286E9EAC00119CCA /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				API_KEY = 697d439ac993538da4e3e60b54e762cd;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.themoviedb.org";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2DNT83345;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Netflix-Clone/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Netflix;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-DDEV";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuttaponbuaban.Netflix-Clone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Dev;
 		};
 		69D5E8CE286D48B000BA9692 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -410,39 +453,13 @@
 			};
 			name = Release;
 		};
-		69D5E8D0286D48B000BA9692 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A2DNT83345;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Netflix-Clone/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Netflix;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nuttaponbuaban.Netflix-Clone";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		69D5E8D1286D48B000BA9692 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 697d439ac993538da4e3e60b54e762cd;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.themoviedb.org";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A2DNT83345;
@@ -458,6 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-DPROD";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuttaponbuaban.Netflix-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -472,7 +490,7 @@
 		69D5E8B6286D48AF00BA9692 /* Build configuration list for PBXProject "Netflix-Clone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69D5E8CD286D48B000BA9692 /* Debug */,
+				1E9D3C53286E9EAC00119CCA /* Dev */,
 				69D5E8CE286D48B000BA9692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -481,7 +499,7 @@
 		69D5E8CF286D48B000BA9692 /* Build configuration list for PBXNativeTarget "Netflix-Clone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69D5E8D0286D48B000BA9692 /* Debug */,
+				1E9D3C54286E9EAC00119CCA /* Dev */,
 				69D5E8D1286D48B000BA9692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
