@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+class HomeViewModel {
+    // MARK: Properties
+
+    let service: HomeService = .init()
+
+    // MARK: Init
+
+    init() {}
+
+    // MARK: Methods
+
+    func getPopularMovies() {
+        service.getPopularMovies { _, _, _ in }
+    }
+}
