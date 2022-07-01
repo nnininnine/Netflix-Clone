@@ -21,6 +21,10 @@ class MainTabBarViewController: UITabBarController {
 
     func setupUI() {
         view.backgroundColor = .systemBackground
+        
+        tabBar.backgroundImage = UIImage()
+        tabBar.backgroundColor = .black
+        tabBar.tintColor = .label
     }
 
     func setup() {
@@ -41,8 +45,6 @@ class MainTabBarViewController: UITabBarController {
         upcomingVC.title = "Coming Soon"
         searchVC.title = "Top Search"
         downloadVC.title = "Downloads"
-
-        tabBar.tintColor = .label
 
         setViewControllers([homeVC, upcomingVC, searchVC, downloadVC], animated: true)
     }
