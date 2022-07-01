@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+class HomeService {
+    // MARK: Init
+
+    init() {}
+
+    // MARK: Methods
+
+    func getPopularMovies(completion: @escaping (Bool, PopularMovies?, String?) -> Void) {
+        let url = Constants.baseUrl + "/3/movie/popular?api_key=" + Constants.apiKey
+
+        print(url)
+    }
+}
