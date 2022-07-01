@@ -21,6 +21,15 @@ enum Constants {
 
 private func getConstantFromInfo<T>(forKey key: String, type: T) -> T? {
     guard let result = Bundle.main.infoDictionary?[key] as? T else { return nil }
-
     return result
+}
+
+// MARK: Types in home screen
+
+enum HomeCollectionType: CaseIterable {
+    case TrendingMovies
+    case Popular
+    case TrendingTv
+    case Upcoming
+    case TopRated
 }
