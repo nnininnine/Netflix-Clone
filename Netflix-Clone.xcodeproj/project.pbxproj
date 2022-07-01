@@ -486,6 +486,7 @@
 				API_KEY = 697d439ac993538da4e3e60b54e762cd;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 				BASE_URL = "https://api.themoviedb.org";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -573,6 +574,7 @@
 				API_KEY = 697d439ac993538da4e3e60b54e762cd;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 				BASE_URL = "https://api.themoviedb.org";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
