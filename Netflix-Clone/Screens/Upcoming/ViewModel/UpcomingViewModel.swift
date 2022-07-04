@@ -13,7 +13,7 @@ class UpcomingViewModel {
 
     let disposeBag: DisposeBag = .init()
     let upcomingPublisher: PublishSubject<TitleMovies> = .init()
-    let service: UpcomingService = .init()
+    private let service: UpcomingService = .init()
 
     // MARK: Init
 
