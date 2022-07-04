@@ -16,7 +16,7 @@ class UpcomingViewController: UIViewController {
 
     private let upcomingTableView: UITableView = {
         let tableView: UITableView = .init()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UpcomingTableViewCell.nib(), forCellReuseIdentifier: UpcomingTableViewCell.identifier)
         return tableView
     }()
 
@@ -49,8 +49,8 @@ class UpcomingViewController: UIViewController {
     }
 
     func bindingData() {
-        viewModel.upcomingPublisher.bind(to: upcomingTableView.rx.items(cellIdentifier: "cell")) { (_: Int, movie: TitleMovie, cell: UITableViewCell) in
-            cell.textLabel?.text = movie.originalTitle ?? ""
+        viewModel.upcomingPublisher.asObserver().bind(to: upcomingTableView.rx.items(cellIdentifier: UpcomingTableViewCell.identifier)) { (_: Int, movie: TitleMovie, cell: UpcomingTableViewCell) in
+            cell.configure(with: movie)
         }.disposed(by: viewModel.disposeBag)
 
         viewModel.getUpcomingMovies()
@@ -59,8 +59,8 @@ class UpcomingViewController: UIViewController {
 
 // MARK: Extensions
 
- extension UpcomingViewController: UITableViewDelegate {
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-         return 100
-     }
- }
+extension UpcomingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}

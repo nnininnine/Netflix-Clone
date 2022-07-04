@@ -5,6 +5,8 @@
 //  Created by Nuttapon Buaban on 4/7/2565 BE.
 //
 
+import Nuke
+import RxSwift
 import UIKit
 
 class UpcomingTableViewCell: UITableViewCell {
@@ -17,17 +19,39 @@ class UpcomingTableViewCell: UITableViewCell {
     // MARK: Properties
 
     static let identifier = "UpcomingTableViewCell"
+    private var movie: TitleMovie?
+    private let disposeBag: DisposeBag = .init()
 
     // MARK: Init
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        setup()
     }
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        selectionStyle = .none
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {}
+    // MARK: Methods
+
+    static func nib() -> UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+
+    func setup() {
+        playButton.rx.tap.asObservable().subscribe(onNext: { [weak self] in
+            guard let movie = self?.movie else { return }
+            print("on tap: \(movie.originalTitle ?? "")")
+        }).disposed(by: disposeBag)
+    }
+
+    func configure(with movie: TitleMovie) {
+        self.movie = movie
+        movieTitleLabel.text = movie.originalTitle ?? ""
+
+        guard let url = URL(string: Constants.baseImgUrl + (movie.posterPath ?? "")) else { return }
+        Nuke.loadImage(with: url, into: movieImageView)
+    }
 }
