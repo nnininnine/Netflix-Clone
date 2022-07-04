@@ -53,6 +53,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieImageView" destination="UB2-oY-bg1" id="e8y-27-tt2"/>
+                <outlet property="movieTitleLabel" destination="T7O-Fh-L1S" id="GAI-nQ-kyF"/>
+                <outlet property="playButton" destination="g8G-vE-1Di" id="cnC-rK-fuk"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </tableViewCell>
     </objects>
