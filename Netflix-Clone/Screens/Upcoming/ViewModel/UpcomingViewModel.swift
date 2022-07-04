@@ -13,13 +13,22 @@ class UpcomingViewModel {
 
     let disposeBag: DisposeBag = .init()
     let upcomingPublisher: PublishSubject<TitleMovies> = .init()
+    let service: UpcomingService = .init()
 
     // MARK: Init
 
     init() {}
 
     // MARK: Methods
+
     func getUpcomingMovies() {
-        
+        service.getUpcomingMovies { [weak self] (success: Bool, titleMovies: TitleMovies?, err: String?) in
+            if success {
+                guard let titleMovies = titleMovies else { return }
+                self?.upcomingPublisher.onNext(titleMovies)
+            } else {
+                print(err ?? "")
+            }
+        }
     }
 }
