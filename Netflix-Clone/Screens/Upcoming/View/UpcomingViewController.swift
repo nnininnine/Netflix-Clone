@@ -8,9 +8,53 @@
 import UIKit
 
 class UpcomingViewController: UIViewController {
+    // MARK: Properties
+
+    private lazy var viewModel: UpcomingViewModel = .init()
+
+    private let upcomingTableView: UITableView = {
+        let tableView: UITableView = .init()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableView
+    }()
+
+    // MARK: Init
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        upcomingTableView.frame = view.bounds
+    }
+
+    // MARK: Methods
+
+    func setup() {
+        title = "Upcoming"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+
+        view.addSubview(upcomingTableView)
+        upcomingTableView.delegate = self
+        upcomingTableView.dataSource = self
+    }
+}
+
+// MARK: Extensions
+
+extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = indexPath.row.description
+        return cell
     }
 }
