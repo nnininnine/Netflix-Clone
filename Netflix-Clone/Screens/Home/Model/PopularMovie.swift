@@ -9,7 +9,7 @@ import Foundation
 
 typealias TitleMovies = [TitleMovie]
 
-struct PopularMoviesResponse: Codable {
+struct TitleMoviesResponse: Codable {
     let results: TitleMovies
 }
 

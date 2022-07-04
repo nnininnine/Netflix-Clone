@@ -23,7 +23,7 @@ class HomeService {
                         completion(false, nil, err)
                         return
                     }
-                    let resp = try JSONDecoder().decode(PopularMoviesResponse.self, from: data)
+                    let resp = try JSONDecoder().decode(TitleMoviesResponse.self, from: data)
 
                     completion(true, resp.results, nil)
                 } catch let err {
