@@ -16,6 +16,8 @@ class TitleCollectionViewCell: UICollectionViewCell {
     private let posterImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+
+        imageView.backgroundColor = .red
         return imageView
     }()
 
@@ -23,6 +25,8 @@ class TitleCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        setup()
     }
 
     @available(*, unavailable)
@@ -42,7 +46,8 @@ class TitleCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with model: String) {
-        guard let url = URL(string: model) else { return }
+        guard let url = URL(string: Constants.baseImgUrl + model) else { return }
+
         Nuke.loadImage(with: url, into: posterImage)
     }
 }

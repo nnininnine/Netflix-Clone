@@ -26,10 +26,10 @@ private func getConstantFromInfo<T>(forKey key: String, type: T) -> T? {
 
 // MARK: Types in home screen
 
-enum HomeCollectionType: CaseIterable {
-    case TrendingMovies
-    case Popular
-    case TrendingTv
-    case Upcoming
-    case TopRated
+enum HomeSections: Int, CaseIterable {
+    case TrendingMovies = 0
+    case Popular = 1
+    case TrendingTv = 2
+    case Upcoming = 3
+    case TopRated = 4
 }

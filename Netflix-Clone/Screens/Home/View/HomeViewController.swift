@@ -45,9 +45,6 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
 
         configureNavbar()
-
-        // get info
-        viewModel.getPopularMovies()
     }
 
     private func configureNavbar() {
@@ -75,6 +72,41 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
+            return UITableViewCell()
+        }
+
+        switch indexPath.section {
+        case HomeSections.TrendingMovies.rawValue:
+            viewModel.getPopularMovies { success, titles, _ in
+                if success {
+                    cell.configure(with: titles!)
+                }
+            }
+        case HomeSections.Popular.rawValue:
+            viewModel.getPopularMovies { success, titles, _ in
+                if success {
+                    cell.configure(with: titles!)
+                }
+            }
+        case HomeSections.TrendingTv.rawValue:
+            viewModel.getPopularMovies { success, titles, _ in
+                if success {
+                    cell.configure(with: titles!)
+                }
+            }
+        case HomeSections.Upcoming.rawValue:
+            viewModel.getPopularMovies { success, titles, _ in
+                if success {
+                    cell.configure(with: titles!)
+                }
+            }
+        case HomeSections.TopRated.rawValue:
+            viewModel.getPopularMovies { success, titles, _ in
+                if success {
+                    cell.configure(with: titles!)
+                }
+            }
+        default:
             return UITableViewCell()
         }
 

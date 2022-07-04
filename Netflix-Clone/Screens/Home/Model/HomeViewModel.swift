@@ -18,12 +18,16 @@ class HomeViewModel {
 
     // MARK: Methods
 
-    func getPopularMovies() {
-        service.getPopularMovies { success, popularMovies, err in
+//    func fetchData() {
+//        getPopularMovies()
+//    }
+
+    func getPopularMovies(completion: @escaping (Bool, TitleMovies?, String?) -> Void) {
+        service.getPopularMovies { success, titleMovies, err in
             if success {
-                print(popularMovies?.count ?? 0)
+                completion(true, titleMovies, nil)
             } else {
-                print("err: \(err ?? "")")
+                completion(false, nil, err)
             }
         }
     }

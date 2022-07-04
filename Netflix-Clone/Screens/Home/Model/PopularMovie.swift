@@ -7,22 +7,13 @@
 
 import Foundation
 
-typealias PopularMovies = [PopularMovie]
+typealias TitleMovies = [TitleMovie]
 
 struct PopularMoviesResponse: Codable {
-    let page: Int
-    let totalResults: Int
-    let totalPages: Int
-    let results: PopularMovies
-
-    enum CodingKeys: String, CodingKey {
-        case page, results
-        case totalResults = "total_results"
-        case totalPages = "total_pages"
-    }
+    let results: TitleMovies
 }
 
-struct PopularMovie: Codable {
+struct TitleMovie: Codable {
     let posterPath: String?
     let adult: Bool
     let overview: String
