@@ -77,7 +77,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         switch indexPath.section {
         case HomeSections.TrendingMovies.rawValue:
-            viewModel.getPopularMovies { success, titles, _ in
+            viewModel.getTrendingMovies { success, titles, _ in
                 if success {
                     cell.configure(with: titles!)
                 }
@@ -89,19 +89,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         case HomeSections.TrendingTv.rawValue:
-            viewModel.getPopularMovies { success, titles, _ in
+            viewModel.getTrendingTv { success, titles, _ in
                 if success {
                     cell.configure(with: titles!)
                 }
             }
         case HomeSections.Upcoming.rawValue:
-            viewModel.getPopularMovies { success, titles, _ in
+            viewModel.getUpcomingMovies { success, titles, _ in
                 if success {
                     cell.configure(with: titles!)
                 }
             }
         case HomeSections.TopRated.rawValue:
-            viewModel.getPopularMovies { success, titles, _ in
+            viewModel.getTopRated { success, titles, _ in
                 if success {
                     cell.configure(with: titles!)
                 }

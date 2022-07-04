@@ -16,8 +16,6 @@ class TitleCollectionViewCell: UICollectionViewCell {
     private let posterImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-
-        imageView.backgroundColor = .red
         return imageView
     }()
 
