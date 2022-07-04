@@ -42,31 +42,25 @@ class UpcomingViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
 
         view.addSubview(upcomingTableView)
-//        upcomingTableView.delegate = self
+        upcomingTableView.delegate = self
 //        upcomingTableView.dataSource = self
 
         bindingData()
     }
 
     func bindingData() {
-        viewModel.upcomingPublisher.bind(to: upcomingTableView.rx.items(cellIdentifier: "cell")) { [weak self] (index: Int, movie: TitleMovie, cell: UITableViewCell) in
+        viewModel.upcomingPublisher.bind(to: upcomingTableView.rx.items(cellIdentifier: "cell")) { (_: Int, movie: TitleMovie, cell: UITableViewCell) in
             cell.textLabel?.text = movie.originalTitle ?? ""
         }.disposed(by: viewModel.disposeBag)
-        
+
         viewModel.getUpcomingMovies()
     }
 }
 
 // MARK: Extensions
 
-// extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 10
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = indexPath.row.description
-//        return cell
-//    }
-// }
+ extension UpcomingViewController: UITableViewDelegate {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return 100
+     }
+ }
