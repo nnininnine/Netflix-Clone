@@ -5,26 +5,49 @@
 //  Created by Nuttapon Buaban on 5/7/2565 BE.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 class SearchResultViewController: UIViewController {
+    // MARK: Properties
+
+    lazy var viewModel: SearchResultViewModel = .init()
+
+    private let searchResultCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3 - 10, height: 200)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 5
+        let collectionView: UICollectionView = .init(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
+
+        return collectionView
+    }()
+
+    // MARK: Init
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .red
+        setup()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        searchResultCollectionView.frame = view.bounds
     }
-    */
 
+    // MARK: Methods
+
+    func setup() {
+        view.addSubview(searchResultCollectionView)
+    }
+
+    func bindingData() {
+        // binding
+
+        // fetch
+    }
 }

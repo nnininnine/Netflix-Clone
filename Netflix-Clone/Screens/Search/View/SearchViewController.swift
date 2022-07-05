@@ -44,7 +44,7 @@ class SearchViewController: UIViewController {
 
     func setup() {
         title = "Top search"
-        
+
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.tintColor = .label
@@ -57,11 +57,19 @@ class SearchViewController: UIViewController {
     }
 
     func bindingData() {
+        // binding table view
         viewModel.discoverPublisher.asObserver().bind(to: discoverTableView.rx.items(cellIdentifier: UpcomingTableViewCell.identifier)) { (_: Int, movie: TitleMovie, cell: UpcomingTableViewCell) in
             cell.configure(with: movie)
         }.disposed(by: viewModel.disposeBag)
 
         viewModel.getDiscoverMovies()
+
+        // subscribe search bar
+        searchController.searchBar.rx.text.orEmpty.asObservable()
+            .subscribe(onNext: { [weak self] text in
+                guard let resultsController = self?.searchController.searchResultsController as? SearchResultViewController else { return }
+                resultsController.viewModel.query = text
+            }).disposed(by: viewModel.disposeBag)
     }
 }
 

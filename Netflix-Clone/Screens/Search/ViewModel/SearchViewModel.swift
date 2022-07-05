@@ -13,7 +13,7 @@ class SearchViewModel {
 
     let disposeBag: DisposeBag = .init()
     let discoverPublisher: PublishSubject<TitleMovies> = .init()
-    private let service: SearchService = .init()
+    private let service: SearchServiceProtocol = SearchService()
 
     // MARK: Init
 
