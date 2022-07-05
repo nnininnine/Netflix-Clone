@@ -99,6 +99,13 @@
 			path = UpcomingTableViewCell;
 			sourceTree = "<group>";
 		};
+		1E0BFE912873DEF100FAA672 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1E9D3C55286EA21D00119CCA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +225,7 @@
 		69D5E8D8286D4EAD00BA9692 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				1E0BFE912873DEF100FAA672 /* ViewModel */,
 				69D5E8D9286D4EB300BA9692 /* View */,
 			);
 			path = Search;

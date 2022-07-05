@@ -37,5 +37,23 @@ class SearchViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
 
         view.addSubview(discoverTableView)
+        discoverTableView.delegate = self
+        discoverTableView.dataSource = self
+    }
+}
+
+//MARK: Extensions
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingTableViewCell.identifier, for: indexPath) as? UpcomingTableViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
