@@ -8,9 +8,34 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    // MARK: Properties
+
+    private let discoverTableView: UITableView = {
+        let tableView: UITableView = .init()
+        tableView.register(UpcomingTableViewCell.nib(), forCellReuseIdentifier: UpcomingTableViewCell.identifier)
+        return tableView
+    }()
+
+    // MARK: Init
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        discoverTableView.frame = view.bounds
+    }
+
+    // MARK: Methods
+
+    func setup() {
+        title = "Top search"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+
+        view.addSubview(discoverTableView)
     }
 }
