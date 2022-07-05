@@ -65,10 +65,10 @@ class SearchViewController: UIViewController {
         viewModel.getDiscoverMovies()
 
         // subscribe search bar
-        searchController.searchBar.rx.text.orEmpty.asObservable()
+        searchController.searchBar.rx.text.orEmpty.asObservable().debounce(.seconds(1), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] text in
                 guard let resultsController = self?.searchController.searchResultsController as? SearchResultViewController else { return }
-                resultsController.viewModel.query = text
+                resultsController.viewModel.query = text.replacingOccurrences(of: " ", with: "+")
             }).disposed(by: viewModel.disposeBag)
     }
 }

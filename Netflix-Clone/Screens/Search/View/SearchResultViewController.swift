@@ -43,11 +43,14 @@ class SearchResultViewController: UIViewController {
 
     func setup() {
         view.addSubview(searchResultCollectionView)
+
+        bindingData()
     }
 
     func bindingData() {
         // binding
-
-        // fetch
+        viewModel.resultPublisher.bind(to: searchResultCollectionView.rx.items(cellIdentifier: TitleCollectionViewCell.identifier)) { (_: Int, movie: TitleMovie, cell: TitleCollectionViewCell) in
+            cell.configure(with: movie.posterPath ?? "")
+        }.disposed(by: viewModel.disposeBag)
     }
 }

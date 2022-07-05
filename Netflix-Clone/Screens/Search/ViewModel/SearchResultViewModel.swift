@@ -15,7 +15,9 @@ class SearchResultViewModel {
 
     var query: String = "" {
         didSet {
-            queryMovie(with: query)
+            if !query.isEmpty {
+                queryMovie(with: query)
+            }
         }
     }
 
