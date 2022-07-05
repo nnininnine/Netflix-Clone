@@ -8,22 +8,31 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
+    // MARK: Properties
+
+    private lazy var viewModel: MovieDetailViewModel = .init()
+
+    // MARK: Init
+
+    init(_ id: Int) {
+        super.init(nibName: nil, bundle: nil)
+        viewModel = .init(id)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    // MARK: Methods
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setup() {
+        print(viewModel.id)
     }
-    */
-
 }

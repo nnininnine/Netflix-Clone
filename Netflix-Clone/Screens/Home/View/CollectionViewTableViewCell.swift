@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol CollectionViewTableViewCellDelegate: AnyObject {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, model: TitleMovie)
+}
+
 class CollectionViewTableViewCell: UITableViewCell {
     // MARK: Properties
 
     static let identifier = "CollectionViewTableViewCell"
+
+    weak var delegate: CollectionViewTableViewCellDelegate?
 
     private var titles: TitleMovies = .init()
 
@@ -50,7 +56,7 @@ class CollectionViewTableViewCell: UITableViewCell {
 
     func configure(with titles: TitleMovies) {
         self.titles = titles
-        
+
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -70,5 +76,13 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titles.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+        let movie = titles[indexPath.row]
+
+        delegate?.collectionViewTableViewCellDidTapCell(self, model: movie)
     }
 }

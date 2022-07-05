@@ -61,6 +61,8 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: Extensions
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitles.count
@@ -109,6 +111,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableViewCell()
         }
+        cell.delegate = self
 
         return cell
     }
@@ -133,5 +136,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .white
         header.textLabel?.text = header.textLabel?.text?.capitalized
+    }
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, model: TitleMovie) {
+        DispatchQueue.main.async { [unowned self] in
+            let vc = MovieDetailViewController(model.id)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
