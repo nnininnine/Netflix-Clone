@@ -20,6 +20,7 @@ struct TitleMovie: Codable {
     let genreIds: [Int]
     let id: Int
     let originalTitle: String?
+    let originalName: String?
     let originalLanguage: String
     let backdropPath: String?
     let popularity: Double
@@ -31,6 +32,7 @@ struct TitleMovie: Codable {
         case posterPath = "poster_path"
         case genreIds = "genre_ids"
         case originalTitle = "original_title"
+        case originalName = "original_name"
         case originalLanguage = "original_language"
         case backdropPath = "backdrop_path"
         case voteCount = "vote_count"

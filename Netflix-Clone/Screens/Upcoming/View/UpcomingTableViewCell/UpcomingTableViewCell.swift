@@ -43,13 +43,13 @@ class UpcomingTableViewCell: UITableViewCell {
     func setup() {
         playButton.rx.tap.asObservable().subscribe(onNext: { [weak self] in
             guard let movie = self?.movie else { return }
-            print("on tap: \(movie.originalTitle ?? "")")
+            print("on tap: \(movie.originalTitle ?? (movie.originalName ?? ""))")
         }).disposed(by: disposeBag)
     }
 
     func configure(with movie: TitleMovie) {
         self.movie = movie
-        movieTitleLabel.text = movie.originalTitle ?? ""
+        movieTitleLabel.text = movie.originalTitle ?? movie.originalName
 
         guard let url = URL(string: Constants.baseImgUrl + (movie.posterPath ?? "")) else { return }
         Nuke.loadImage(with: url, into: movieImageView)
