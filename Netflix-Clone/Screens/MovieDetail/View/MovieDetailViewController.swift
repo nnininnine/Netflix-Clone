@@ -17,6 +17,9 @@ class MovieDetailViewController: UIViewController {
     init(_ id: Int) {
         super.init(nibName: nil, bundle: nil)
         viewModel = .init(id)
+
+        // tab bar setup
+        hidesBottomBarWhenPushed = true
     }
 
     @available(*, unavailable)
@@ -27,12 +30,20 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
         setup()
     }
 
     // MARK: Methods
 
+    func setupUI() {
+        // nav bar setup
+        navigationController?.hidesBarsOnSwipe = false
+    }
+
     func setup() {
         print(viewModel.id)
+
+        view.backgroundColor = .red
     }
 }

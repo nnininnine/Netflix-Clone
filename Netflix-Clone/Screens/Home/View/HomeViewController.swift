@@ -144,6 +144,8 @@ extension HomeViewController: CollectionViewTableViewCellDelegate {
         DispatchQueue.main.async { [unowned self] in
             let vc = MovieDetailViewController(model.id)
             self.navigationController?.pushViewController(vc, animated: true)
+//            self.show(vc, sender: nil)
+//            self.present(vc, animated: true)
         }
     }
 }
