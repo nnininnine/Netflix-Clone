@@ -5,10 +5,14 @@
 //  Created by 7Peaks on 30/6/2565 BE.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 class SearchViewController: UIViewController {
     // MARK: Properties
+
+    private lazy var viewModel: SearchViewModel = .init()
 
     private let discoverTableView: UITableView = {
         let tableView: UITableView = .init()
@@ -23,7 +27,7 @@ class SearchViewController: UIViewController {
 
         setup()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         discoverTableView.frame = view.bounds
@@ -38,21 +42,22 @@ class SearchViewController: UIViewController {
 
         view.addSubview(discoverTableView)
         discoverTableView.delegate = self
-        discoverTableView.dataSource = self
+
+        bindingData()
+    }
+
+    func bindingData() {
+        viewModel.discoverPublisher.asObserver().bind(to: discoverTableView.rx.items(cellIdentifier: UpcomingTableViewCell.identifier)) { (_: Int, movie: TitleMovie, cell: UpcomingTableViewCell) in
+            cell.configure(with: movie)
+        }.disposed(by: viewModel.disposeBag)
+
+        viewModel.getDiscoverMovies()
     }
 }
 
-//MARK: Extensions
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingTableViewCell.identifier, for: indexPath) as? UpcomingTableViewCell else { return UITableViewCell() }
-        
-        return cell
-    }
+// MARK: Extensions
+
+extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

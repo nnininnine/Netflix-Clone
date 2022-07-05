@@ -6,13 +6,29 @@
 //
 
 import Foundation
+import RxSwift
 
 class SearchViewModel {
     // MARK: Properties
+
+    let disposeBag: DisposeBag = .init()
+    let discoverPublisher: PublishSubject<TitleMovies> = .init()
+    private let service: SearchService = .init()
 
     // MARK: Init
 
     init() {}
 
     // MARK: Methods
+
+    func getDiscoverMovies() {
+        service.getDiscoverMovies { [weak self] (success: Bool, titleMovies: TitleMovies?, err: String?) in
+            if success {
+                guard let titleMovies = titleMovies else { return }
+                self?.discoverPublisher.onNext(titleMovies)
+            } else {
+                print(err ?? "")
+            }
+        }
+    }
 }
